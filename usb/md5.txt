@@ -1,0 +1,4 @@
+MD5 (software/mac/VirtualBox-5.1.26-117224-OSX.dmg) = 0cc6d3119213a30da6006f6360c909e3
+MD5 (software/mac/vagrant_1.9.8_x86_64.dmg) = a0c5f226260a44254ba445401ed353ad
+MD5 (software/win/VirtualBox-5.1.26-117224-Win.exe) = 4fb0270f766ee259702a8b09d06ca916
+MD5 (software/win/vagrant_1.9.8_x86_64.msi) = 3cdbb499c9a17ff0f5d7274a375047a3
