@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 MD5="md5sum"
 
@@ -18,7 +18,7 @@ get() {
 
 
 checksum() {
-  MD5="md5"
+  [ `uname -s` = "Darwin" ] && MD5="md5"
   ${MD5} software/*/* > md5.txt
   cat md5.txt
 
