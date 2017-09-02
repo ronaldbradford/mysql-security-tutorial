@@ -1,8 +1,7 @@
 MySQL Security Tutorial
 =======================
 
-Implementing MySQL Security Features
-https://www.percona.com/live/e17/sessions/implementing-mysql-security-features
+[Implementing MySQL Security Features](https://www.percona.com/live/e17/sessions/implementing-mysql-security-features) at the Percona Live Europe 2017 Conference.
 
 
 
@@ -12,13 +11,13 @@ Authentication Plugins
 SQL
 ---
 
-  SELECT plugin_name FROM information_schema.plugins WHERE plugin_type='AUTHENTICATION';
+    SELECT plugin_name FROM information_schema.plugins WHERE plugin_type='AUTHENTICATION';
 
 
 PAM Authentication
 ------------------
 
-  INSTALL PLUGIN auth_pam SONAME 'auth_pam.so';
+    INSTALL PLUGIN auth_pam SONAME 'auth_pam.so';
 
 
 
@@ -30,5 +29,5 @@ Ronald Bradford and Colin Charles are both very seasoned database professionals.
 More Information
 ----------------
 
-Ronald Bradford [ronaldbradford.com](http://ronaldbradford.com/ "Ronald Bradford")  [@RonaldBradford](https://twitter.com/RonaldBradford)
-Colin Charles [bytebot.net](http://www.bytebot.net/ "Colin Charles") [@bytebot](https://twitter.com/bytebot)
+# Ronald Bradford [ronaldbradford.com](http://ronaldbradford.com/ "Ronald Bradford")  [@RonaldBradford](https://twitter.com/RonaldBradford)
+# Colin Charles [bytebot.net](http://www.bytebot.net/ "Colin Charles") [@bytebot](https://twitter.com/bytebot)
