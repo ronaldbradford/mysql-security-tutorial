@@ -1,3 +1,4 @@
 usb/software/
 usb/boxes/
 **/.vagrant
+vagrant/centos7/enterprise/5.7/software/
