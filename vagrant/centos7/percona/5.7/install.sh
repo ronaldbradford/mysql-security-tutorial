@@ -11,3 +11,4 @@ sudo yum install -y sysbench
 curl -sLo gh-ost.tar.gz https://github.com/github/gh-ost/releases/download/v1.0.40/gh-ost-binary-linux-1.0.40-20170721063804.tar.gz
 tar xvfz gh-ost.tar.gz
 sudo mv gh-ost /usr/local/bin
+echo "export MYSQL_PS1=\"\\u@\"\`hostname\`\" > \"" | sudo tee /etc/profile.d/mysql.sh
