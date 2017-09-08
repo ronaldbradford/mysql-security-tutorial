@@ -108,6 +108,16 @@ SQL
     mysql> SELECT PLUGIN_NAME, PLUGIN_STATUS FROM INFORMATION_SCHEMA.PLUGINS WHERE PLUGIN_NAME LIKE 'audit%';
     mysql> SHOW GLOBAL VARIABLES LIKE 'audit%';
 
+
+Accessing Virtual Machines
+==========================
+
+Each of the vagrant images have a host-only adapter that enables connections via an IP address.
+
+    $ vagrant ssh-config | sed -e "s/127.0.0.1/192.168.42.17/;/Port/d" > config
+    $ ssh -F config mysql57
+
+
 Troubleshooting
 ===============
 
