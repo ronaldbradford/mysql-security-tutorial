@@ -9,6 +9,7 @@ yum repolist enabled | grep mysql
 sudo yum install -y mysql-community-server
 sudo systemctl start mysqld.service
 sudo systemctl enable mysqld.service
+sudo ifup eth1
 
-echo "[client]
-prompt=`hostname` >" > ${HOME}/.my.cnf
+echo "export MYSQL_PS1=\"\\u@\"\`hostname\`\" > \"" | sudo tee /etc/profile.d/mysql.sh
+
