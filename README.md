@@ -109,11 +109,29 @@ SQL
     mysql> SHOW GLOBAL VARIABLES LIKE 'audit%';
 
 
+Encryption
+----------
+
+    CREATE SCHEMA IF NOT EXISTS demo;
+    USE demo
+    INSERT INTO text_myisam(intro) VALUES('Episode IV, A NEW HOPE It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire’s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet. Pursued by the Empire’s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy.');
+    DROP TABLE IF EXISTS text_innodb;
+    CREATE TABLE text_innodb(intro TEXT NOT NULL) ENGINE=InnoDB;
+    START TRANSACTION;
+    INSERT INTO text_innodb(intro) VALUES('Episode IV, A NEW HOPE It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire’s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet. Pursued by the Empire’s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy.');
+    COMMIT;
+    DROP TABLE IF EXISTS text_innodb_encrypted;
+    CREATE TABLE text_innodb_encrypted(intro TEXT NOT NULL) ENCRYPTION='Y';
+    START TRANSACTION;
+    INSERT INTO text_innodb_encrypted(intro) VALUES('Episode IV, A NEW HOPE It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire. During the battle, Rebel spies managed to steal secret plans to the Empire’s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet. Pursued by the Empire’s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy.');
+    COMMIT;
+    
+    
 Accessing Virtual Machines
 ==========================
-
+    
 Each of the vagrant images have a host-only adapter that enables connections via an IP address.
-
+    
     $ vagrant ssh-config | sed -e "s/127.0.0.1/192.168.42.17/;/Port/d" > config
     $ ssh -F config mysql57
 
