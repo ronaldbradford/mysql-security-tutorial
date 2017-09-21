@@ -1,0 +1,51 @@
+mysql57 >select PASSWORD('TimTam#2017');
+
+mysql57 >select password('Aussie#1770');
++-------------------------------------------+
+| password('Aussie#1770')                   |
++-------------------------------------------+
+| *8EAFF04C6A57EA18E26CD763F36898464E515F9B |
++-------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql57 >select password('Koala#1770');
++-------------------------------------------+
+| password('Koala#1770')                    |
++-------------------------------------------+
+| *592FC5B183989C4B6C5FC49B909D7B6FBD992D4C |
++-------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql57 >select password('Outback#1770');
++-------------------------------------------+
+| password('Outback#1770')                  |
++-------------------------------------------+
+| *3D961736F2D76F665EF22CF4D325F43CE9370166 |
++-------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+[vagrant@mysql57 ~]$ mysql -ured_dba -pAussie#1770 -e"SHOW GRANTS"
+mysql: [Warning] Using a password on the command line interface can be insecure.
++------------------------------------------------------------------------+
+| Grants for red_dba@localhost                                           |
++------------------------------------------------------------------------+
+| GRANT ALL PRIVILEGES ON *.* TO 'red_dba'@'localhost' WITH GRANT OPTION |
++------------------------------------------------------------------------+
+
+
+mysql: [Warning] Using a password on the command line interface can be insecure.
++---------------------------------------------------------------------------+
+| Grants for red_app@localhost                                              |
++---------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'red_app'@'localhost'                               |
+| GRANT SELECT, INSERT, UPDATE, DELETE ON `demo`.* TO 'red_app'@'localhost' |
++---------------------------------------------------------------------------+
+
+grant@mysql57 ~]$ mysql -ured_user -pOutback#1770 -e "SHOW GRANTS"
+mysql: [Warning] Using a password on the command line interface can be insecure.
++----------------------------------------------------+
+| Grants for red_user@localhost                      |
++----------------------------------------------------+
+| GRANT USAGE ON *.* TO 'red_user'@'localhost'       |
+| GRANT SELECT ON `demo`.* TO 'red_user'@'localhost' |
++----------------------------------------------------+
