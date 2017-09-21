@@ -15,3 +15,5 @@ prompt=`hostname` >" > ${HOME}/.my.cnf
 
 sudo rpm -ivh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo yum install -y ngrep
+sudo yum install -y wget unzip
+wget https://dl.bintray.com/mcafee/mysql-audit-plugin/audit-plugin-mysql-5.6-1.1.5-742-linux-x86_64.zip
